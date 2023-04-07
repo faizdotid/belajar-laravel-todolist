@@ -42,7 +42,7 @@ class UserController extends Controller
         
         if($this->userService->login($validate['username'], $validate['password'])) {
             session()->put('islogin', true);
-            return redirect('/home');
+            return redirect('/todolist');
         }
         
         return back()->with('error', 'Gagal masuk')->withErrors($validate);        
